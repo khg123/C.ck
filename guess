@@ -1,0 +1,21 @@
+# 随机猜数字游戏,数字范围1-30
+print('---------------猜数字游戏----------')
+print('---------------你有三次机会---------')
+import random                           #导入随机模块random
+secret = random.randint(1,30)           #生成1-30的随机数字赋值给变量secret
+count = 0
+while count < 3:
+    number = int(input('guess number：'))
+    if number == secret:
+        print('Yes,the anwser is',secret)
+        break
+    elif number > secret:
+        print('think bigger')
+    elif number < secret:
+        print('think smaller')
+    count += 1
+    if count == 3:
+        num = input('would you Continue，Y / N ？')
+        if num != ('n') and ('N') :
+            count = 0
+print('Game Over')
